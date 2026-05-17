@@ -1,0 +1,31 @@
+/* ═══════════════════════════════════════════════════════
+   STACK
+═══════════════════════════════════════════════════════ */
+.section-stack {
+    border-top:1px solid var(--border);
+    border-bottom:1px solid var(--border);
+}
+.stack-row {
+    display:grid;
+    grid-template-columns:1fr 1.4fr;
+    gap:48px;
+    align-items:center;
+}
+.stack-copy p { font-size:1rem; color:var(--text-muted); line-height:1.8; margin-top:14px; }
+.stack-tags {
+    display:flex; flex-wrap:wrap; gap:10px;
+}
+.stack-tags span {
+    padding:9px 20px;
+    border-radius:999px;
+    background:var(--surface);
+    border:1px solid var(--border);
+    font-size:.88rem; font-weight:500; color:var(--text-muted);
+    transition:color .2s, border-color .2s, background .2s;
+    cursor:default;
+}
+.stack-tags span:hover {
+    color:var(--cyan);
+    border-color:rgba(0,229,255,.28);
+    background:rgba(0,229,255,.06);
+}

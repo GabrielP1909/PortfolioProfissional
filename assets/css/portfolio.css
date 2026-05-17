@@ -1,0 +1,84 @@
+/* ═══════════════════════════════════════════════════════
+   PORTFOLIO
+═══════════════════════════════════════════════════════ */
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 20px;
+}
+
+.pf-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    transition: transform .3s var(--ease-out), box-shadow .3s ease;
+}
+.pf-card:hover { transform:translateY(-5px); box-shadow:0 24px 60px rgba(0,0,0,.45); }
+
+.pf-visual {
+    aspect-ratio: 16/10;
+    background: linear-gradient(135deg, var(--g1), var(--g2) 55%, var(--g3));
+    position: relative;
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+}
+.pf-card--wide .pf-visual { aspect-ratio:16/9; }
+
+.pfv-decoration {
+    position:absolute; border-radius:50%;
+    pointer-events:none;
+}
+.pfv-d1 {
+    width:220px; height:220px;
+    background: radial-gradient(circle, rgba(124,58,237,.45), transparent 70%);
+    top:-60px; right:-50px; filter:blur(30px);
+}
+.pfv-d2 {
+    width:160px; height:160px;
+    background: radial-gradient(circle, rgba(0,229,255,.3), transparent 70%);
+    bottom:-30px; left:10px; filter:blur(20px);
+}
+
+.pfv-icon {
+    position:relative; z-index:1;
+    width:60px; height:60px;
+    background: rgba(255,255,255,.12);
+    backdrop-filter: blur(10px);
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:18px;
+    display:grid; place-items:center;
+}
+
+.pfv-tags {
+    position:absolute; bottom:12px; left:12px;
+    display:flex; gap:6px;
+}
+.pfv-tags span {
+    background: rgba(0,0,0,.55);
+    backdrop-filter:blur(8px);
+    border:1px solid rgba(255,255,255,.1);
+    color:var(--text);
+    font-size:.7rem; font-weight:600;
+    padding:4px 10px; border-radius:999px;
+}
+
+.pf-info { padding:22px; }
+.pf-info h3 { font-size:1.1rem; margin-bottom:8px; }
+.pf-info p { font-size:.9rem; color:var(--text-muted); line-height:1.75; margin-bottom:14px; }
+
+.pf-meta { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px; }
+.pf-tag {
+    font-size:.72rem; font-weight:600;
+    background: rgba(124,58,237,.14);
+    border:1px solid rgba(124,58,237,.2);
+    color: #c4b5fd;
+    padding:3px 10px; border-radius:999px;
+}
+
+.pf-link {
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:.88rem; font-weight:600; color:var(--cyan);
+    transition:gap .2s;
+}
+.pf-link:hover { gap:10px; }

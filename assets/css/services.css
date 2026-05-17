@@ -1,0 +1,71 @@
+/* ═══════════════════════════════════════════════════════
+   SERVICES
+═══════════════════════════════════════════════════════ */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.svc-card {
+    position: relative;
+    padding: 32px 28px;
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    transition: transform .3s var(--ease-out), border-color .3s ease, box-shadow .3s ease;
+    overflow: hidden;
+}
+.svc-card::after {
+    content:'';
+    position:absolute; inset:0;
+    background: linear-gradient(135deg, rgba(124,58,237,.08) 0%, transparent 60%);
+    opacity:0;
+    transition: opacity .3s;
+    pointer-events:none;
+}
+.svc-card:hover { transform:translateY(-6px); border-color:rgba(124,58,237,.35); box-shadow:0 20px 60px rgba(0,0,0,.35); }
+.svc-card:hover::after { opacity:1; }
+
+.svc-card--featured {
+    background: linear-gradient(145deg, rgba(124,58,237,.14), rgba(0,229,255,.04));
+    border-color: rgba(124,58,237,.3);
+}
+
+.svc-featured-label {
+    position: absolute;
+    top:18px; right:18px;
+    font-size:.7rem; font-weight:700;
+    letter-spacing:.08em; text-transform:uppercase;
+    background: linear-gradient(135deg, var(--purple), #a855f7);
+    color:#fff;
+    padding: 4px 12px;
+    border-radius:999px;
+}
+
+.svc-icon {
+    width:50px; height:50px;
+    display:grid; place-items:center;
+    border-radius:14px;
+    background: rgba(124,58,237,.18);
+    border: 1px solid rgba(124,58,237,.25);
+    margin-bottom: 20px;
+    color: var(--cyan);
+}
+.svc-icon--featured { background:rgba(0,229,255,.12); border-color:rgba(0,229,255,.25); }
+
+.svc-card h3 { margin-bottom:10px; }
+.svc-card > p { font-size:.9rem; color:var(--text-muted); line-height:1.75; margin-bottom:18px; }
+
+.svc-list { display:grid; gap:8px; }
+.svc-list li {
+    display:flex; align-items:center; gap:8px;
+    font-size:.85rem; color:var(--text-muted);
+}
+.svc-list li::before {
+    content:'';
+    display:block; flex-shrink:0;
+    width:5px; height:5px;
+    border-radius:50%;
+    background: var(--cyan);
+}

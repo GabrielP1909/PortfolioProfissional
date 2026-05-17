@@ -1,0 +1,41 @@
+/* ═══════════════════════════════════════════════════════
+   TESTIMONIALS
+═══════════════════════════════════════════════════════ */
+.testi-grid {
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:20px;
+}
+
+.testi-card {
+    padding:32px 28px;
+    border-radius:var(--radius-lg);
+    background:var(--surface);
+    border:1px solid var(--border);
+    transition:transform .28s var(--ease-out), border-color .28s ease;
+    position:relative; overflow:hidden;
+}
+.testi-card::before {
+    content:'"';
+    position:absolute;
+    top:12px; right:20px;
+    font-size:5rem; line-height:1;
+    color:rgba(124,58,237,.12);
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-weight:800;
+    pointer-events:none;
+}
+.testi-card:hover { transform:translateY(-4px); border-color:rgba(124,58,237,.28); }
+
+.testi-stars { color:#fbbf24; font-size:.85rem; letter-spacing:2px; margin-bottom:16px; }
+.testi-card blockquote { font-size:.95rem; color:var(--text-muted); line-height:1.85; margin-bottom:24px; font-style:italic; }
+
+.testi-author { display:flex; align-items:center; gap:12px; }
+.testi-avatar {
+    width:40px; height:40px; border-radius:50%; flex-shrink:0;
+    display:grid; place-items:center;
+    font-family:'Bricolage Grotesque',sans-serif;
+    font-size:.72rem; font-weight:700; color:#fff;
+}
+.testi-author strong { display:block; font-size:.92rem; margin-bottom:1px; }
+.testi-author span { font-size:.8rem; color:var(--text-dim); }

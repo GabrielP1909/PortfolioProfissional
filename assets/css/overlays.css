@@ -1,0 +1,21 @@
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+        radial-gradient(ellipse 70% 55% at 8% 0%, rgba(124,58,237,.2) 0%, transparent 65%),
+        radial-gradient(ellipse 50% 40% at 92% 100%, rgba(0,229,255,.1) 0%, transparent 60%);
+}
+
+.anim-fade {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .65s var(--ease-out), transform .65s var(--ease-out);
+}
+
+.anim-fade.is-visible {
+    opacity: 1;
+    transform: none;
+}
